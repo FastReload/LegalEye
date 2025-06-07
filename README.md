@@ -1,11 +1,10 @@
-
-# 🧠 LegalEye: Clause-Level Legal Document Analyzer
+#  LegalEye: Clause-Level Legal Document Analyzer
 
 **LegalEye** is a layout-aware, explainable system for clause classification and interpretation in legal contracts. It integrates Legal-BERT for classification, FAISS for semantic retrieval, and Google's Gemini API for generating natural language explanations. The tool is built with Streamlit for ease of use and real-time interactivity.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - ✅ Extracts individual clauses from uploaded PDF contracts
 - ✅ Classifies clauses using fine-tuned Legal-BERT (`nlpaueb/legal-bert-base-uncased`)
@@ -15,27 +14,20 @@
 
 ---
 
-## 📂 Dataset: LEDGAR
+##  Dataset: LEDGAR
 
-We use the publicly available [LEDGAR dataset](https://archive.org/details/LEDGAR), introduced by Tuggener et al. (LREC 2020), for clause-level classification.
+We use the publicly availableLEDGAR dataset, introduced by Tuggener et al. (LREC 2020), for clause-level classification.
 
-To download:
-
-```bash
-wget https://archive.org/download/LEDGAR/ledgar.zip
-unzip ledgar.zip
-```
-
-After downloading, use the provided `prepare_ledgar_index.py` to generate FAISS index and embeddings for retrieval.
+You can also find a zip version of the dataset already uploaded in the repository for convenience.
 
 ---
 
-## 🔧 Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/LegalEye.git
+git clone https://github.com/FastReload/LegalEye.git
 cd LegalEye
 ```
 
@@ -49,17 +41,15 @@ pip install -r requirements.txt
 
 ### 3. Configure Gemini API
 
-Add your API key in a `.env` file or directly in `config.py`:
+Add your API key directly in `explanation_generator.py`:
 
 ```bash
 export GEMINI_API_KEY="your_key_here"
 ```
 
-Or set it in Streamlit manually at runtime.
-
 ---
 
-## ▶️ Running the Application
+##  Running the Application
 
 ```bash
 streamlit run app.py
@@ -67,17 +57,18 @@ streamlit run app.py
 
 ---
 
-## 📊 Model Performance
+##  Model Performance
 
-| Model                | Accuracy | Macro-F1 | Weighted-F1 |
-|----------------------|----------|----------|-------------|
-| Legal-BERT (5-class) | 96.2%    | 93.0%    | 95.8%       |
-| BERT base            | 92.1%    | 87.2%    | 91.0%       |
-| TF-IDF + SVM         | 65.2%    | 35.8%    | 63.5%       |
+| Model                  | Accuracy | Macro-F1 | Weighted-F1 |
+|------------------------|----------|----------|-------------|
+| Legal-BERT (5-class)   | 96.2%    | 93.0%    | 95.8%       |
+| BERT base (5-class)    | 92.1%    | 87.2%    | 91.0%       |
+| TF-IDF + SVM (68-class)| 65.2%    | 35.8%    | 63.5%       |
+| Legal-BERT (68-class)  | 79.5%    | 58.3%    | 78.6%       |
 
 ---
 
-## 📎 Example
+##  Example
 
 **Input Clause:**
 
@@ -90,38 +81,6 @@ streamlit run app.py
 
 ---
 
-## 📜 Citation
-
-If you use LegalEye in academic work, please cite:
-
-```
-@inproceedings{your_paper,
-  title={LegalEye: A Layout-Aware Clause Classification, Retrieval, and Explanation System for Legal Documents},
-  author={Your Name},
-  year={2025},
-  booktitle={NeurIPS}
-}
-```
-
----
-
-## ⚖️ License
+##  License
 
 This project is licensed under the MIT License.
-
----
-
-## 📦 `requirements.txt`
-
-```txt
-streamlit>=1.30.0
-pdfplumber>=0.10.2
-transformers>=4.39.3
-sentence-transformers>=2.2.2
-faiss-cpu>=1.7.4
-scikit-learn>=1.4.2
-numpy>=1.26.4
-torch>=2.2.2
-protobuf<=3.20.3
-google-generativeai>=0.3.2
-```
