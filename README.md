@@ -16,7 +16,8 @@
 
 ##  Dataset: LEDGAR
 
-We use the publicly availableLEDGAR dataset, introduced by Tuggener et al. (LREC 2020), for clause-level classification.
+We use the publicly available LEDGAR dataset, introduced by Tuggener et al. ([LREC 2020 Paper](https://aclanthology.org/2020.lrec-1.155.pdf)), for clause-level classification.
+
 
 You can also find a zip version of the dataset already uploaded in the repository for convenience.
 
