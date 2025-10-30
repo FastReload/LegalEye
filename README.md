@@ -76,7 +76,7 @@ streamlit run app.py
 > _"This agreement shall be governed by and construed in accordance with the laws of the State of Delaware."_
 
 **Predicted Label:** Governing Law  
-**Top Match:** "This agreement is governed by the laws of California."  
+**Top Match:** "This agreement is governed by the laws of Delaware."  
 **Generated Explanation:**  
 > _"This clause defines the jurisdiction under which the agreement will be interpreted and enforced, which affects how disputes are resolved."_
 
